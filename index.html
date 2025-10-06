@@ -9,79 +9,104 @@
       font-family: "Segoe UI", Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f6f8fa;
+      background: #f5f7fb;
       color: #333;
-      line-height: 1.7;
+      line-height: 1.8;
     }
 
     header {
-      background: #1e88e5;
+      background: linear-gradient(135deg, #1e88e5, #1565c0);
       color: white;
       text-align: center;
-      padding: 40px 20px;
+      padding: 50px 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
 
     header h1 {
       margin: 0;
-      font-size: 2em;
+      font-size: 2.2em;
     }
 
     header p {
       margin-top: 10px;
       font-size: 1.1em;
+      opacity: 0.9;
     }
 
     main {
       max-width: 900px;
-      margin: 40px auto;
+      margin: 50px auto;
       background: white;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 45px;
+      border-radius: 14px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     }
 
     h2 {
-      border-left: 5px solid #1e88e5;
-      padding-left: 10px;
+      border-left: 6px solid #1e88e5;
+      padding-left: 12px;
       color: #1e88e5;
-      margin-top: 40px;
+      margin-top: 50px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 18px;
+      text-align: justify;
+    }
+
+    ul {
+      margin: 10px 0 20px 25px;
     }
 
     .team {
-      background: #f0f4f8;
+      background: #eef3f8;
       padding: 20px;
       border-radius: 10px;
       margin-top: 20px;
       line-height: 1.8;
-    }
-
-    ul {
-      margin-left: 20px;
-    }
-
-    img {
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      margin-top: 15px;
+      border-left: 4px solid #1e88e5;
     }
 
     figure {
       text-align: center;
-      margin: 20px 0;
+      margin: 25px 0;
+    }
+
+    img {
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+      margin-top: 10px;
+      width: 100%;
+      max-width: 450px;
+      height: auto;
     }
 
     figcaption {
       font-size: 0.9em;
       color: #555;
-      margin-top: 5px;
+      margin-top: 8px;
+      font-style: italic;
     }
 
     footer {
       text-align: center;
-      padding: 20px;
-      color: #777;
+      padding: 25px;
+      color: #666;
       font-size: 0.9em;
-      margin-top: 40px;
+      margin-top: 60px;
+      background: #f0f3f6;
+      border-top: 1px solid #d8dee4;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 25px;
+        margin: 25px;
+      }
+      header h1 {
+        font-size: 1.6em;
+      }
     }
   </style>
 </head>
@@ -102,8 +127,8 @@
 
     <h2>Descrição do Relatório</h2>
     <p>
-      Este trabalho tem como objetivo explorar os conceitos de compressão de dados sem perdas
-      tanto para imagens como para áudio.
+      Este trabalho tem como objetivo explorar os conceitos de compressão de dados sem perdas,
+      tanto para imagens quanto para sinais de áudio.
     </p>
 
     <h2>Introdução</h2>
@@ -112,8 +137,7 @@
       cujo principal tema aborda os algoritmos de compressão de dados sem perdas testados com sinais de áudio e imagem.
       O trabalho foi dividido em tarefas específicas, nas quais analisamos os códigos e tiramos conclusões sobre as
       características relacionadas à compressão dos dados. Os algoritmos modificaram os arquivos preparando-os para uma
-      possível compressão, e também mostraram diversos resultados a partir dessas mudanças, como a qualidade dos dados,
-      taxas de erro e outros aspectos relevantes.
+      possível compressão, e também mostraram resultados sobre a qualidade dos dados, taxas de erro e outros aspectos relevantes.
     </p>
 
     <h2>Objetivos</h2>
@@ -126,6 +150,7 @@
     </ul>
 
     <h2>Metodologia</h2>
+
     <p><strong>Etapa A — Análise de Áudio:</strong></p>
     <ul>
       <li>Execução dos códigos no Google Colab.</li>
@@ -158,69 +183,75 @@
     <p>A primeira imagem a ser analisada foi a que se segue:</p>
 
     <figure>
-      <img src="33_desenho_animado.png" alt="Imagem original utilizada no experimento" width="400">
+      <img src="33_desenho_animado.png" alt="Imagem original utilizada no experimento">
       <figcaption>Figura 1 — Imagem utilizada na análise.</figcaption>
     </figure>
 
     <p>
-      As características da imagem são:
-      <br>Formato: (634, 500, 4)
-      <br>Tipo: Float32
+      As características da imagem são:<br>
+      Formato: (634, 500, 4)<br>
+      Tipo: Float32
     </p>
 
     <p><strong>Implementação do Filtro Paeth para prever um pixel:</strong></p>
 
     <figure>
-      <img src="WhatsApp Image 2025-10-06 at 13.19.09.jpeg" alt="Resultado do filtro Paeth" width="400">
+      <img src="WhatsApp Image 2025-10-06 at 13.19.09.jpeg" alt="Resultado do filtro Paeth">
       <figcaption>Figura 2 — Resultado do filtro Paeth aplicado à imagem.</figcaption>
     </figure>
 
     <p>
-      Como é visto , não é possível observar de forma clara a diferença entre as duas imagens, isso ocorre pois o filtro paeth aplicado
-      prepara estisticamente os dados para que estes possam ser comprimidos. Por tanto, as imagens apresentandas refletem aparentemente uma 
-      boa transofrmação dos dados preservando a qualidade dos mesmos.
+      Como é visto, não é possível observar de forma clara a diferença entre as duas imagens. 
+      Isso ocorre pois o filtro Paeth aplicado prepara estatisticamente os dados para que possam 
+      ser comprimidos. Assim, as imagens apresentadas refletem uma boa transformação dos dados, 
+      preservando a qualidade visual.
     </p>
 
     <p>
-      A seguir, é apresentado o erro residual gerado pelo filtro, que nos indica detalhadamente a eficiencia do filtro no processo.
+      A seguir, é apresentado o erro residual gerado pelo filtro, que nos indica detalhadamente a eficiência do processo.
     </p>
 
     <figure>
-      <img src="/content/Erro_Normalizado.jpeg" alt="Erro Residual" width="400">
-      <figcaption>Figura 3 — Eficiencia do filtro Paeth aplicado à imagem.</figcaption>
+      <img src="Erro_Normalizado.jpeg" alt="Erro Residual">
+      <figcaption>Figura 3 — Eficiência do filtro Paeth aplicado à imagem.</figcaption>
     </figure>
 
-    <p><strong>Resultados:</strong></p>
     <p>
-      Pela figura, é possível analizar que em sua maior parte temos a presença uniforme da cor cinza, o que representa as áreas
-      onde o erro foi praticamente zero. Para estes pontos a "adivinhação do filtro" foi próxima de perfeita, indicando que a imagem predita
-      era quase igual a imagem riginal.
+      Pela figura, é possível analisar que, em sua maior parte, temos a presença uniforme da cor cinza, 
+      o que representa áreas onde o erro foi praticamente zero. Nesses pontos, a "adivinhação" do filtro 
+      foi quase perfeita, indicando que a imagem predita era praticamente igual à original.
     </p>
+
     <p>
-      As linhas que formam o contorno da raposa são os locais onde o erro foi maior. Isso ocorre devido ao fato de que é muito mais difícil
-      prever um pixel quando ele esta na borda entre duas cores diferentes, gerando assim maior tendência a erros.
+      As linhas que formam o contorno da raposa são os locais onde o erro foi maior, pois é mais difícil prever um pixel 
+      quando ele está na borda entre duas cores diferentes, gerando maior tendência a erros.
     </p>
 
     <p><strong>Imagem Multidão</strong></p>
 
     <figure>
-      <img src="/content/Imagem_Multidão.jpeg" alt="Multidão" width="400">
-      <figcaption>Figura 4 — Figura Multidão</figcaption>
+      <img src="Imagem_Multidão.jpeg" alt="Multidão">
+      <figcaption>Figura 4 — Imagem Multidão.</figcaption>
     </figure>
 
-     <p><strong>Imagem Multidão Original x Predita</strong></p>
+    <p><strong>Imagem Multidão Original x Predita</strong></p>
 
     <figure>
-      <img src="/content/Original_Predita.jpeg" alt="Predita" width="400">
-      <figcaption>Figura 4 — Figura Multidão</figcaption>
+      <img src="Original_Predita.jpeg" alt="Imagem Predita">
+      <figcaption>Figura 5 — Comparação entre imagem original e predita.</figcaption>
     </figure>
 
-    <p><strong> </strong></p>
+    <p><strong>Erro Residual</strong></p>
+    <figure>
+      <img src="Erro_Residual.jpeg" alt="Erro Residual">
+      <figcaption>Figura 6 — Erro residual da imagem Multidão.</figcaption>
+    </figure>
 
-
-
-    
-
+    <p>
+      Esta figura apresentou menos erros em relação à imagem da raposa, o que é observado pela uniformidade da cor cinza. 
+      Esse resultado decorre do fato de que, diferente da imagem anterior, é mais simples para o filtro prever pixels com 
+      cores uniformes do que lidar com variações abruptas de cor.
+    </p>
   </main>
 
   <footer>
