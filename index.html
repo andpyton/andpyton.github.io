@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title> Laboratório 2 - Codificação sem Perdas, Áudio e Imagem </title>
+  <title>Laboratório 2 - Codificação sem Perdas, Áudio e Imagem</title>
   <style>
     body {
       font-family: "Segoe UI", Arial, sans-serif;
@@ -11,6 +11,7 @@
       padding: 0;
       background: #f6f8fa;
       color: #333;
+      line-height: 1.7;
     }
 
     header {
@@ -34,7 +35,7 @@
       max-width: 900px;
       margin: 40px auto;
       background: white;
-      padding: 30px;
+      padding: 40px;
       border-radius: 12px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
@@ -43,6 +44,7 @@
       border-left: 5px solid #1e88e5;
       padding-left: 10px;
       color: #1e88e5;
+      margin-top: 40px;
     }
 
     .team {
@@ -53,90 +55,130 @@
       line-height: 1.8;
     }
 
+    ul {
+      margin-left: 20px;
+    }
+
+    img {
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      margin-top: 15px;
+    }
+
+    figure {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    figcaption {
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 5px;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
       color: #777;
       font-size: 0.9em;
+      margin-top: 40px;
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1>Laboratório 2 - Codificação sem Perdas, Áudio e Imagem</h1>
-    <p>Projeto desenvolvido para a disciplina Codificação de Sinais multimídia </p>
+    <p>Projeto desenvolvido para a disciplina Codificação de Sinais Multimídia</p>
   </header>
 
   <main>
-    <h2> Integrantes do Grupo:</h2>
+    <h2>Integrantes do Grupo</h2>
     <div class="team">
-      <p><strong>Felipe </strong> — RA: XXXXXXXXXXX</p>
+      <p><strong>Felipe</strong> — RA: XXXXXXXXXXX</p>
       <p><strong>Matheus Ferreira Santos Viana Pereira</strong> — RA: 11201721433</p>
       <p><strong>André Anelli</strong> — RA: 11202130037</p>
-      
     </div>
 
-    <h2>Descrição Do Relatorio:</strong></h2>
-    <p>Este trabalho tem como objetivo explorar os conceitos de compressão de dados sem perdas tanto para imagens como áudio.</p>
-
-    <h2>Introdução</strong></h2>
+    <h2>Descrição do Relatório</h2>
     <p>
-      No presente relatório, descreveremos o estudo realizado no segundo laboratório de codificação de sinais multimídia,
-      cujo principal tema aborda os algoritimos de compressão de dados sem perdas que foram testados utilizando dados de áudio e
-      imagem. O trabalhado foi dividido em tarefas especificas onde analisamos os códigos e tiramos conclusões sobre determinadas
-      caracaterísticas relacionadas a compressão dos dados. Os algoritimos modificaram os arquivos preparando-os para uma possível
-      compressão de dados , e também mostraram diversos resultados a apartir dessas mudanças realizadas,como a qualidade dos dados, 
-      taxas de erro durante a modicação dos mesmos e outros aspectos relevantes.
+      Este trabalho tem como objetivo explorar os conceitos de compressão de dados sem perdas
+      tanto para imagens como para áudio.
     </p>
 
-    <h2>Objetivos</strong></h2>
+    <h2>Introdução</h2>
     <p>
-      Os objetivos do trabalho foram divididos em tarefas específicas para cada integrante e são apresentados a seguir:
-      
-      1. Analista de áudio - Leitura do sinal de áudio, reprodução do mesmo em um ambiente de programação python.
-      2. Especialista de Pedição para o áudio - Cálculo da predição linear, cálculo do resíduo, analise de Entropia do resíduo.
-      3. Analista de Imagem - Leitura da Imagem, implementação do filtro Paeth, Cálculo do erro residual.
-      4. Especialista em Entropia - Leitura e implementação do filtro, distribuição do erro residual, cálculo da entropia.
+      No presente relatório, descreveremos o estudo realizado no segundo laboratório de Codificação de Sinais Multimídia,
+      cujo principal tema aborda os algoritmos de compressão de dados sem perdas testados com sinais de áudio e imagem.
+      O trabalho foi dividido em tarefas específicas, nas quais analisamos os códigos e tiramos conclusões sobre as
+      características relacionadas à compressão dos dados. Os algoritmos modificaram os arquivos preparando-os para uma
+      possível compressão, e também mostraram diversos resultados a partir dessas mudanças, como a qualidade dos dados,
+      taxas de erro e outros aspectos relevantes.
     </p>
 
-    <h2>Metodologia</strong></h2>
+    <h2>Objetivos</h2>
+    <p>Os objetivos do trabalho foram divididos em tarefas específicas para cada integrante:</p>
+    <ul>
+      <li><strong>Analista de Áudio:</strong> Leitura do sinal de áudio, reprodução e análise no Google Colab.</li>
+      <li><strong>Especialista de Predição:</strong> Cálculo da predição linear, cálculo do resíduo e análise de entropia.</li>
+      <li><strong>Analista de Imagem:</strong> Leitura da imagem, implementação do filtro Paeth e cálculo do erro residual.</li>
+      <li><strong>Especialista em Entropia:</strong> Cálculo e análise da distribuição e entropia do erro residual.</li>
+    </ul>
+
+    <h2>Metodologia</h2>
+    <p><strong>Etapa A — Análise de Áudio:</strong></p>
+    <ul>
+      <li>Execução dos códigos no Google Colab.</li>
+      <li>Carregamento do arquivo e análise do tamanho e formato.</li>
+      <li>Reprodução do arquivo de áudio e plotagem do sinal.</li>
+    </ul>
+
+    <p><strong>Etapa B — Especialista de Predição:</strong></p>
+    <ul>
+      <li>Implementação da predição linear de ordem 1.</li>
+      <li>Cálculo do erro residual e análise dos resultados.</li>
+    </ul>
+
+    <p><strong>Etapa C — Analista de Imagem:</strong></p>
+    <ul>
+      <li>Leitura e exibição da imagem original.</li>
+      <li>Implementação do filtro diferencial Paeth.</li>
+      <li>Cálculo do erro de predição e estatísticas associadas.</li>
+    </ul>
+
+    <p><strong>Etapa D — Especialista de Entropia:</strong></p>
+    <ul>
+      <li>Implementação do filtro Paeth e cálculo do erro residual.</li>
+      <li>Plot da distribuição do erro e cálculo da entropia.</li>
+    </ul>
+
+    <h2>Análise e Resultados</h2>
+
+    <p><strong>Etapa C — Análise de Imagem</strong></p>
+    <p>A primeira imagem a ser analisada foi a que se segue:</p>
+
+    <figure>
+      <img src="33_desenho_animado.png" alt="Imagem original utilizada no experimento" width="400">
+      <figcaption>Figura 1 — Imagem utilizada na análise.</figcaption>
+    </figure>
+
     <p>
-    Etapa A - Análise áudio.</strong>
-    - O experimento utilizou como ambiente o google colab para executar os códigos e teve as seguintes funções:
-    - Carregar o arquivo e anotar seu tamanho e o shape.
-    - Tocar o arquivo de áudio.
-    - Plotar o código lido.
-    Etapa B - Especialista de Predição.</strong>
-    - Anotar o tamanho e shape o arquivo.
-    - Implementar a predição linear de ordem 1.
-    - Calcular o erro residual.
-    - Analisar e visualizar o erro residual.
-    Etapa C - Analista de Imagem.</strong>
-    - Leitura e Plot da imagem.
-    - Cálculo do filtro diferencial Paeth.
-    - Cálculo do erro de predção, com estatísticas.
-    - Leitura da imagem.
-    Etapa D - Especialista de Entropia.</strong>
-    - Leitura da imagem.
-    - Implementação do filtro Paeth para rever os pixels.
-    - Plot da distribuição do erro residual.
-    - Cálculo da entropia do erro.
+      As características da imagem são:
+      <br>Formato: (634, 500, 4)
+      <br>Tipo: Float32
     </p>
-  <h2>Análise e Resultados</strong></h2>
-    <p>
-    Etapa C - Analista de Imagem</strong>
 
-    
-    
+    <p><strong>Implementação do Filtro Paeth para prever um pixel:</strong></p>
 
+    <figure>
+      <img src="WhatsApp Image 2025-10-06 at 13.19.09.jpeg" alt="Resultado do filtro Paeth" width="400">
+      <figcaption>Figura 2 — Resultado do filtro Paeth aplicado à imagem.</figcaption>
+    </figure>
 
-      
-    </p>
-  
   </main>
 
   <footer>
-    &copy; 2025 — Equipe Lab1 | Todos os direitos reservados
+    &copy; 2025 — Equipe Lab2 | Todos os direitos reservados.
   </footer>
 </body>
 </html>
